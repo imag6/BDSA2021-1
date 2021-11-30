@@ -40,11 +40,11 @@ namespace Lecture04
             //     Console.WriteLine(character);
             // }
 
-            var configuration = LoadConfiguration();
-            var connectionString = configuration.GetConnectionString("Comics");
+            //var configuration = LoadConfiguration();
+            var connectionString = "User ID=postgres;Password=bdsa;Host=localhost;Port=1337;Database=BDSA-project1;";
 
-            var optionsBuilder = new DbContextOptionsBuilder<ComicsContext>().UseSqlServer(connectionString);
-            using var context = new ComicsContext(optionsBuilder.Options);
+            var optionsBuilder = new DbContextOptionsBuilder<ProjectBankContext>().UseSqlServer(connectionString);
+            using var context = new ProjectBankContext(optionsBuilder.Options);
 
             // var hulk = new Character
             // {
@@ -63,7 +63,7 @@ namespace Lecture04
 
             // ComicsContextFactory.Seed(context);
 
-            var chars = from c in context.Characters
+            /*var chars = from c in context.Characters
                         where c.AlterEgo.Contains("a")
                         select new
                         {
@@ -76,7 +76,7 @@ namespace Lecture04
             foreach (var c in chars)
             {
                 Console.WriteLine(c);
-            }
+            }*/
 
         }
 

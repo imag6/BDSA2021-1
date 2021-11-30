@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Lecture04
 {
-    public class RawSqlCharacterRepository
+    public class RawSqlChgtaracterRepository
     {
         private readonly SqlConnection _connection;
 
